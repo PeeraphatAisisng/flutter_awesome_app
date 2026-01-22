@@ -135,7 +135,14 @@ class _SignupUiState extends State<SignupUi> {
 
                 // SIGNUP button
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Account created successfully!'),
+                        duration: Duration(seconds: 2),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size(
                       MediaQuery.of(context).size.width,
@@ -168,7 +175,14 @@ class _SignupUiState extends State<SignupUi> {
 
                 // Google Sign up
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Google Sign up functionality'),
+                        duration: Duration(seconds: 2),
+                      ),
+                    );
+                  },
                   style: OutlinedButton.styleFrom(
                     fixedSize: Size(
                       MediaQuery.of(context).size.width,
@@ -203,24 +217,29 @@ class _SignupUiState extends State<SignupUi> {
 
                 // ALREADY HAVE AN ACCOUNT?
                 Center(
-                  child: RichText(
-                    text: const TextSpan(
-                      children: [
-                        TextSpan(
-                          text: "ALREADY HAVE AN ACCOUNT? ",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: RichText(
+                      text: const TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "ALREADY HAVE AN ACCOUNT? ",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        TextSpan(
-                          text: "LOGIN",
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
+                          TextSpan(
+                            text: "LOGIN",
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

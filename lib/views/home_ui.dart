@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_awesome_app/views/login_ui.dart';
+import 'package:flutter_awesome_app/views/signup.ui.dart';
 
 class HomeUi extends StatelessWidget {
   const HomeUi({super.key});
@@ -54,7 +56,14 @@ class HomeUi extends StatelessWidget {
   mainAxisAlignment: MainAxisAlignment.center,
   children: [
     OutlinedButton(
-  onPressed: () {},
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const LoginUi(),
+      ), 
+    );
+  },
   style: OutlinedButton.styleFrom(
     side: const BorderSide(color: Colors.black),
     fixedSize: const Size(150, 50),
@@ -75,7 +84,14 @@ class HomeUi extends StatelessWidget {
     const SizedBox(width: 20),
 
     ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SignupUi(),
+          ),
+        );
+      },
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
